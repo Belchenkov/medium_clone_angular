@@ -8,9 +8,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { RegisterComponent } from './components/register/register.component';
 import { reducers } from "./store/reducers";
 import { AuthService } from "./services/auth.service";
-import { RegisterEffect } from "./store/effects/register.effect";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
 import { PersistenceService } from "../shared/services/persistence.service";
+import { RegisterEffect } from "./store/effects/register.effect";
+import { LoginEffect } from "./store/effects/login.effect";
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([
-      RegisterEffect
+      RegisterEffect,
+      LoginEffect
     ]),
     BackendErrorMessagesModule
   ],
