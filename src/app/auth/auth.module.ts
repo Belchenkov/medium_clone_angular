@@ -6,6 +6,7 @@ import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from '@ngrx/effects';
 
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 import { reducers } from "./store/reducers";
 import { AuthService } from "./services/auth.service";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
@@ -32,7 +37,10 @@ const routes: Routes = [
     ]),
     BackendErrorMessagesModule
   ],
-  declarations: [RegisterComponent],
+  declarations: [
+    RegisterComponent,
+    LoginComponent
+  ],
   providers: [
     AuthService,
     PersistenceService
