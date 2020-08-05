@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthModule } from "./auth/auth.module";
 import { environment } from "../environments/environment";
+import { TopBarModule } from "./shared/modules/topBar/topBar.module";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { environment } from "../environments/environment";
       maxAge: 25,
       logOnly: environment.production
     }),
+    TopBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
